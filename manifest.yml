@@ -1,0 +1,6 @@
+applications:
+  - name: mybank
+    memory: 1G
+    disk_quota: 512M
+    instances: 1
+    path: target/mybank-0.0.1-SNAPSHOT.jar
