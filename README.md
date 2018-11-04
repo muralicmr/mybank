@@ -64,6 +64,7 @@ To prefill table you can insert data into ```data.sql```
 - [X] Unit tests
 - [ ] Integration Tests
 - [ ] JenkinsFile
+- [ ] Swagger UI
 - [ ] Sonar
 - [ ] Fortify
 - [ ] JMeter

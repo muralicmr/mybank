@@ -33,12 +33,12 @@ public class MakePaymentValidator {
             throw new MyBankException(MyBankProblemDetails.INVALID_REQUEST);
         }
 
-        if(fromAcc == null) {
+        if (fromAcc == null) {
             throw new MyBankException(MyBankProblemDetails.INVALID_FROM_ACCOUNT);
-        }
-
-        if(toAcc == null) {
+        } else if (toAcc == null) {
             throw new MyBankException(MyBankProblemDetails.INVALID_TO_ACCOUNT);
+        } else if (request.getFromAccount() == request.getToAccount()) {
+            throw new MyBankException(MyBankProblemDetails.SAME_FROM_ACC_AND_TO_ACC);
         }
 
         return true;

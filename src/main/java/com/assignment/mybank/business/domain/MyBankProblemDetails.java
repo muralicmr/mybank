@@ -20,6 +20,9 @@ public class MyBankProblemDetails {
     public static final MyBankProblemDetails INVALID_TO_ACCOUNT =
             new MyBankProblemDetails(URI.create("/errors/invalid-to-account"), "invalid to account", HttpStatus.BAD_REQUEST);
 
+    public static final MyBankProblemDetails SAME_FROM_ACC_AND_TO_ACC =
+            new MyBankProblemDetails(URI.create("/errors/from-account-and-to-account-same"), "same from and to account", HttpStatus.BAD_REQUEST);
+
     public static final MyBankProblemDetails INSUFFICIENT_BALANCE =
             new MyBankProblemDetails(URI.create("/errors/insuficient-balance"), "insufficient balance", HttpStatus.BAD_REQUEST);
 

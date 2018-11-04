@@ -140,4 +140,22 @@ public class MakePaymentValidatorTest {
             assertEquals("invalid to account", e.getMyBankProblemDetails().getTitle());
         }
     }
+
+    @Test
+    public void test_validate_sameFromAndToAccount() {
+        Account acc = Account.builder().build();
+
+        MakePaymentRequest makePaymentRequest = MakePaymentRequest.builder()
+                .fromAccount(1)
+                .toAccount(1)
+                .amount(100.00)
+                .description("test")
+                .build();
+
+        try {
+            makePaymentValidator.validate(makePaymentRequest, acc, acc);
+        } catch (MyBankException e) {
+            assertEquals("same from and to account", e.getMyBankProblemDetails().getTitle());
+        }
+    }
 }
